@@ -67,3 +67,12 @@ export default applyHook(ProjectSearch)(useProjectSearch);
 ```
 
 see [applyHook.ts](src/common/applyHook.ts)
+
+Overall structure is like this
+
+```bash
+project-search/
+  ├── ProjectSearch.tsx   # Presentational
+  ├── index.tsx           # export "Container" that apply hook to presentational
+  └── useProjectSearch.ts # Hook (formerly container)
+```
