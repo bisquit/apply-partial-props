@@ -4,7 +4,7 @@ import ProjectSearch from './module/project-search'
 function App() {
   return (
     <>
-      <ProjectSearch perPage={8}/>
+      <ProjectSearch requiredArg='1' perPage={8}/>
     </>
   )
 }
