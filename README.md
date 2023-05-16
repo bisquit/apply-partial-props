@@ -72,7 +72,9 @@ Overall structure is like this
 
 ```bash
 project-search/
-  ├── ProjectSearch.tsx   # Presentational
-  ├── index.tsx           # export "Container" that apply hook to presentational
-  └── useProjectSearch.ts # Hook (formerly container)
+  ├── ProjectSearch.tsx         # Presentational
+  ├── ProjectSearch.stories.tsx
+  ├── ProjectSearch.test.ts
+  ├── index.tsx                 # export "Container" that apply hook to presentational
+  └── useProjectSearch.ts       # Hook (formerly container)
 ```
