@@ -82,6 +82,32 @@ project-search/
   └── useProjectSearch.ts       # Hook (formerly container)
 ```
 
+### Toggle props to fake ones
+
+In a situation where you don't want to call hooks logic (e.g. storybook), use `createFakeProvider`.
+
+```ts
+// useProjectSearch.fake.ts
+
+// pass original hook type to infer
+export default createFakeProvider<typeof useProjectSearch>(() => ({
+  options: ['a', 'b'],
+  onKeywordChange: () => 'fake'
+}));
+```
+
+```ts
+// main.ts
+enableFake();
+```
+
+Then `applyPartialProps` uses `path/to/provider.fake.ts`.
+
+## Motivation
+
+- Enable to use hooks instead of container component, but keeping presentational decoupled from hooks
+- Enable to toggle props to fake ones (for such as storybook)
+
 ## Prior Art
 
 - https://github.com/helloitsjoe/react-hooks-compose
